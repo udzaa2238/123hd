@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>123HD-กันยายน-2568-หน้าที่1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- External CSS -->
+  <link href="https://playtvthai.github.io/m3u8/css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://playtvthai.github.io/m3u8/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://playtvthai.github.io/m3u8/css/normalize.css">
+  <link rel="stylesheet" href="https://playtvthai.github.io/m3u8/css/custom.css">
+  <link rel="stylesheet" href="https://playtvthai.github.io/m3u8/css/main.css">
+  <link rel="stylesheet" href="http://hdtvdd.com/work/assets_remark/fonts/font-awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="http://hdtvdd.com/work/font/stylesheet.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="http://hdtvdd.com/work/css/8k.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="http://hdtvdd.com/work/css/overlay.css" type="text/css" charset="utf-8">
+  <link href="http://hdtvdd.com/work/css/theme.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+
+  <!-- JS (dedupe jQuery) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://playtvthai.github.io/m3u8/js/jquery.backstretch.js"></script>
+  <script src="http://hdtvdd.com/work/bootstrap-login-forms/form-2/assets/js/scripts.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100%;
+      background: #000;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+    *, *:before, *:after { box-sizing: inherit; }
+
+    /* Search/filter bar */
+    .filter-bar {
+      margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .filter-bar input, .filter-bar select {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #444;
+      background: #1f2025;
+      color: #fff;
+    }
+
+    /* Movie grid 5 columns */
+    /* Movie grid */
+    .movies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 -5px;
+      padding-top: 10px;
+    }
+    .movie-item {
+      flex: 0 0 10%; /* เล็กลง, 5 คอลัมน์ต่อแถว */
+      box-sizing: border-box;
+      padding: 0 5px;
+      margin-bottom: 20px;
+      max-width: 200px; /* หรือจำกัดขนาดสูงสุด */
+    }
+    .movie-box {
+      background: #1f2025;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .movie-image button {
+      width: 100%;
+      height: 0;
+      padding-top: 147%;
+      background-size: cover;
+      background-position: center;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .movie-title {
+      color: white;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 6px;
+      line-height: 1.2;
+      padding: 0 4px;
+      word-break: break-word;
+    }
+
+    @media (max-width: 1200px) {
+      .movie-item { flex: 0 0 33.333%; }
+    }
+    @media (max-width: 900px) {
+      .movie-item { flex: 0 0 50%; }
+    }
+    @media (max-width: 600px) {
+      .movie-item { flex: 0 0 100%; }
+    }
+
+    .pagination-wrapper { text-align: center; margin-top: 20px; }
+    .pagination > li > a, .pagination > li > span { padding: 6px 12px; }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $("#myBtn").click(function(){ $("#myModal").modal(); });
+      $("#myBtn2").click(function(){ $("#myModal2").modal(); });
+      $("#myBtn_vip").click(function(){ $("#myModal_vip").modal(); });
+      $("#myBtn_cpass").click(function(){ $("#myModal_changepass").modal(); });
+
+      // Filter logic
+      function normalizeText(t) {
+        return t.trim().toLowerCase();
+      }
+
+      function applyFilter() {
+        const query = normalizeText($("#movie-search").val() || "");
+        const category = $("#category-filter").val();
+        $(".movie-item").each(function() {
+          const title = normalizeText($(this).find(".movie-title").text() || "");
+          const itemCat = $(this).attr("data-category") || "all";
+          const matchesSearch = query === "" || title.includes(query);
+          const matchesCategory = category === "all" || itemCat === category;
+          if (matchesSearch && matchesCategory) {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      }
+
+      $("#movie-search").on("input", applyFilter);
+      $("#category-filter").on("change", applyFilter);
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container" style="background-color:rgba(0,0,0,0); height:100%;">
+    <div class="container_wrap">
+      <div class="row" style="background-color:#27282c;border-radius:5px;">
+        <div class="col-lg-12 col-md-12 col-xs-12" style="margin-top:10px;margin-bottom:10px;">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-5 col-xs-5">
+              <div class="logo"></div>
+            </div>
+            <div class="col-lg-10 col-md-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-xs-12" align="left" style="padding:5px;">
+                <div class="form-inline">
+                  <div class="form-group" style="margin:5px;">
+                    <form action="" method="get" name="lange" style="display:inline;">
+                      <input name="lange" type="hidden" id="lange" value="en">
+                      <input type="image" src="/web/images/en.gif" name="submit" width="60" height="20" alt="submit"/>
+                    </form>
+                  </div>
+                  <label for="form-password"><font color="white">ชื่อ : </font><font color="yellow">[ ผู้เฒ่าพเนจร ™ ]</font></label>
+
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='go:digital'">🏠 Home ™</button>
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='go:live'">📡 ถ่ายทอดสด ™</button>
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='go:main-serie'">🎞️ ดูซีรี่ย์ ™</button>
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='go:main-movie'">🎥 ดูหนัง ™</button>
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='go:main-movie'">📽️ ดูสารคดี ™</button>
+                  <button class="btn btn-default" type="button" style="background-color:transparent;border-radius:2px;border:0;font-size:18px;color:#FFF;padding:0 5px;font-family:'rsuregular';" onclick="window.location.href='http://action_exit'">🚪 ออก</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- filter bar -->
+          <div class="filter-bar">
+            <div>
+              <input id="movie-search" type="text" placeholder="ค้นหาหนัง..." />
+            </div>
+            <div>
+              <select id="category-filter">
+                <option value="all">ทั้งหมด</option>
+                <option value="action">Action</option>
+                <option value="drama">Drama</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="exclusive">Exclusive</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- รวมทุก movie-item ไว้ใน grid เดียว -->
+          <div class="movies-grid">
+		  
+<div class="movies-grid">
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Halabala-2025-ฮาลาบาลา-ป่าจิตหลุด.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/d9d9d1f7f521fb0512be1103/d9d9d1f7f521fb0512be1103.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">alabala (2025) ฮาลาบาลา ป่าจิตหลุด</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Love-or-Lie-2025-ฮักสัปปะลี่กับคดีสีชมพู.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/e8c28e528ca69f92def2b345/e8c28e528ca69f92def2b345.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Love or Lie (2025) ฮักสัปปะลี่กับคดีสีชมพู</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Credit-Knife-People-2025-ชายผู้ให้ยืมดาบ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/b6b643c471a4ec0a21b855ee/b6b643c471a4ec0a21b855ee.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Credit Knife People (2025) ชายผู้ให้ยืมดาบ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Jiangziya-2025-สังหารขุนพลชิงแผนภูมิวงศ์เทวา.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/dd5ff0022ae1985bbc9a64d2/dd5ff0022ae1985bbc9a64d2.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Jiangziya (2025) สังหารขุนพลชิงแผนภูมิวงศ์เทวา</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/The-Last-Goodbye-2025-คำลาครั้งสุดท้าย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/4e3c387a207c361409a20b0d/4e3c387a207c361409a20b0d.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Last Goodbye (2025) คำลาครั้งสุดท้าย</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/My-Magic-Prophecy-2025-ทำนายทายทัพ.jpg);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/aaa084f7f41a50976afeca14/aaa084f7f41a50976afeca14.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">My Magic Prophecy (2025) ทำนายทายทัพ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Weapons-2025-เวเพินส์.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/011ecf9780669450dd9fef0c/011ecf9780669450dd9fef0c.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Weapons (2025) เวเพินส์</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Freakier-Friday-2025-ศุกร์สยอง-สี่ร่างสลับรุ่น.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/f52d6a5360b83de687fa0cae/f52d6a5360b83de687fa0cae.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Freakier Friday (2025) ศุกร์สยอง สี่ร่างสลับรุ่น</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Freakier-Friday-2025-ศุกร์สยอง-สี่ร่างสลับรุ่น.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/83dd92409d38159153f1eab9/83dd92409d38159153f1eab9.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Freakier Friday (2025) ศุกร์สยอง สี่ร่างสลับรุ่น</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Sugar-Mill-2025-โรงงานผีดุ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/316021452a7abbef9bb5707a/316021452a7abbef9bb5707a.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Sugar Mill (2025) โรงงานผีดุ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Black-Bag-2025-ปฏิบัติการลับสองหน้า.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/48e003614b70e13632800342/48e003614b70e13632800342.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Black Bag (2025) ปฏิบัติการลับสองหน้า</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Omniscient-Reader-The-Prophecy-2025-อ่านชะตาวันสิ้นโลก.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/c4201eb9a40b7bc0e3e20fb6/c4201eb9a40b7bc0e3e20fb6.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Omniscient Reader The Prophecy (2025) อ่านชะตาวันสิ้นโลก</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Creation-of-the-Gods-2-Demon-Force-2025-กำเนิดเทพเจ้า-ตอน-มหาศึกเทพยุทธ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/39ad20e0cb9568ee334211cb/39ad20e0cb9568ee334211cb.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Creation of the Gods II Demon Force (2025) กำเนิดเทพเจ้า ตอน มหาศึกเทพยุทธ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/The-Pickup-2025-เดอะพิคอัพ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/ebfb3e22d052e12aa2c510c0/ebfb3e22d052e12aa2c510c0.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Pickup (2025) เดอะพิคอัพ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/The-Pickup-2025-เดอะพิคอัพ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/3754425b1482cd72e67714cc/3754425b1482cd72e67714cc.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Pickup (2025) เดอะพิคอัพ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/28-Years-Later-2025-28-ปีให้หลัง-เชื้อเขมือบคน.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/0a6daaa712ea887b975b0d96/0a6daaa712ea887b975b0d96.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">28 Years Later (2025) 28 ปีให้หลัง เชื้อเขมือบคน</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/28-Years-Later-2025-28-ปีให้หลัง-เชื้อเขมือบคน.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/60d26bf80b9e4a8cc86b914a/60d26bf80b9e4a8cc86b914a.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">28 Years Later (2025) 28 ปีให้หลัง เชื้อเขมือบคน</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Jurassic-World-Rebirth-2025-จูราสสิค-เวิลด์-กำเนิดชีวิตใหม่.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/64b6ea1cdecfd90a2b810476/64b6ea1cdecfd90a2b810476.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Jurassic World Rebirth (2025) จูราสสิค เวิลด์ กำเนิดชีวิตใหม่</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Thug-Life-2025-ชีวิตอันธพาล.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/4024184d85a41e8a87885920/4024184d85a41e8a87885920.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Thug Life (2025) ชีวิตอันธพาล</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/Detective-Dee-The-Ghosts-in-Weird-Town-2025-ตี๋เหรินเจี๋ย-เมืองผีซากศพ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/2fcd0ad0a3037b64bc89f499/2fcd0ad0a3037b64bc89f499.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Detective Dee The Ghosts in Weird Town (2025) ตี๋เหรินเจี๋ย เมืองผีซากศพ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/I-Know-What-You-Did-Last-Summer-2025-ซัมเมอร์สยอง.ต้องหวีด.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/bbc48f74e1d8d4d69c881bff/bbc48f74e1d8d4d69c881bff.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">I Know What You Did Last Summer (2025) ซัมเมอร์สยอง…ต้องหวีด</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/The-Ritual-2025-ไล่มันออกจากร่าง.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/f4508a3b894d90326c15cb2c/f4508a3b894d90326c15cb2c.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Ritual (2025) ไล่มันออกจากร่าง</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/03/Ne-Zha-2-2025-นาจา-2-1.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/63f409df08136dfc72600849/63f409df08136dfc72600849.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Ne Zha 2 (2025) นาจา 2</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/Final-Destination-Bloodlines-2025-ไฟนอล-เดสติเนชั่น-ทายาทโกงตาย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/00bc5ca72b976a94723e8fbb/00bc5ca72b976a94723e8fbb.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Final Destination Bloodlines (2025) ไฟนอล เดสติเนชั่น</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/Final-Destination-Bloodlines-2025-ไฟนอล-เดสติเนชั่น-ทายาทโกงตาย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/1a280dc278d6e411bf95b91e/1a280dc278d6e411bf95b91e.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Final Destination Bloodlines (2025) ไฟนอล เดสติเนชั่น</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/My-Oxford-Year-2025-อ็อกซ์ฟอร์ดในฝันของสาวอเมริกัน.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/1607cee1ceec6d3079709f1b/1607cee1ceec6d3079709f1b.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">My Oxford Year (2025) อ็อกซ์ฟอร์ดในฝันของสาวอเมริกัน</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/Number-2-2025-นัมเบอร์ทู.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/96b6123b546b899ab5cf77c9/96b6123b546b899ab5cf77c9.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Number 2 (2025) นัมเบอร์ทู</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/The-Naked-Gun-2025-มือปราบปืนเปลือย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/a211a860d6c3d00371f470d3/a211a860d6c3d00371f470d3.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Naked Gun (2025) มือปราบปืนเปลือย</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/The-Naked-Gun-2025-มือปราบปืนเปลือย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/9f2c84bc373c87940011dbea/9f2c84bc373c87940011dbea.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Naked Gun (2025) มือปราบปืนเปลือย</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/The-Wedding-Banquet-2025-เดอะ-เวดดิง-แบงควิต.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/c1cc24f8611b0eed96540993/c1cc24f8611b0eed96540993.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Wedding Banquet (2025) เดอะ เวดดิง แบงควิต</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/An-Honest-Life-2025-ชีวิตซื่อ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/5495795857b3a75c19052d27/5495795857b3a75c19052d27.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">An Honest Life (2025) ชีวิตซื่อ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/08/An-Honest-Life-2025-ชีวิตซื่อ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/34e1c9f612c382f876333b2a/34e1c9f612c382f876333b2a.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">An Honest Life (2025) ชีวิตซื่อ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123hdtv.com/wp-content/uploads/2025/08/The-Stone-2025-เดอะ-สโตน-พระแท้-คนเก๊.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/09e2bd0055172e2236835dae/09e2bd0055172e2236835dae.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Stone (2025) เดอะ สโตน พระแท้ คนเก๊</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Untold-2025-ซ่อนเร้น.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/05cc3c9c1a2e0363fe6cf0b6/05cc3c9c1a2e0363fe6cf0b6.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Untold (2025) ซ่อนเร้น</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Soul-Land-Sword-Master-2025-ตำนานจอมยุทธ์ภูตถังซาน-วิถีจิตแห่งดาบ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/13be3230c6e41db1cffe4689/13be3230c6e41db1cffe4689.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Soul Land Sword Master (2025) ตำนานจอมยุทธ์ภูตถังซาน วิถีจิตแห่งดาบ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/War-of-the-Worlds-2025-สงครามโลก.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/d4320ac853876cf681483c37/d4320ac853876cf681483c37.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">War of the Worlds (2025) สงครามโลก</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/Shadow-Force-2025-ดับเบิลจารชน-โคตรคนไร้เงา.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/c3a3edb02fc2b273c2092d21/c3a3edb02fc2b273c2092d21.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Shadow Force (2025) ดับเบิลจารชน โคตรคนไร้เงา</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/06/Shadow-Force-2025-ดับเบิลจารชน-โคตรคนไร้เงา.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/a865e82f980aff5f74881fea/a865e82f980aff5f74881fea.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Shadow Force (2025) ดับเบิลจารชน โคตรคนไร้เงา</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Bring-Her-Back-2025.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/1abc1980869b91975418b4f9/1abc1980869b91975418b4f9.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Bring Her Back (2025)</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Never-a-Thief-2025-ทะลวงแผนโจร.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/a04370c9b9cb78618269a642/a04370c9b9cb78618269a642.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Never a Thief (2025) ทะลวงแผนโจร</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Under-Ninja-2025.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/1df9435fa43b8a9a7544a361/1df9435fa43b8a9a7544a361.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Under Ninja (2025)</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/04/Locked-2025-ล็อก-ล่อมาตาย.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/47608a333e361c73fd8e28ac/47608a333e361c73fd8e28ac.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Locked (2025) ล็อก ล่อมาตาย</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Happy-Gilmore-2-2025-แฮปปี้-กิลมอร์-2.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/d5e64bf9bb4633d1d4f64fe7/d5e64bf9bb4633d1d4f64fe7.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">appy Gilmore 2 (2025) แฮปปี้ กิลมอร์ 2</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Happy-Gilmore-2-2025-แฮปปี้-กิลมอร์-2.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/b67f19fb655ff6105f6e2ca4/b67f19fb655ff6105f6e2ca4.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">appy Gilmore 2 (2025) แฮปปี้ กิลมอร์ 2</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/04/Figth-Break-Sphere-4-2025-สัประยุทธ์ทะลุฟ้า-4.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/ea96737d9cf9f1f27d9bdaa8/ea96737d9cf9f1f27d9bdaa8.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Figth Break Sphere 4 (2025) สัประยุทธ์ทะลุฟ้า 4</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/04/Figth-Break-Sphere-3-2025-สัประยุทธ์ทะลุฟ้า-3.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/702521ad575dba8890a4f8a9/702521ad575dba8890a4f8a9.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Figth Break Sphere 3 (2025) สัประยุทธ์ทะลุฟ้า 3</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/The-Legend-of-Ochi-2025-โอชิ-อสูรขี้อ้อน-พา-น้อน-กลับบ้าน.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/cd677831920e6a0ce4ea45ca/cd677831920e6a0ce4ea45ca.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Legend of Ochi (2025) โอชิ อสูรขี้อ้อน พา ‘น้อน’ กลับบ้าน</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/11-Hearts-Before-You-2025-รัก-11-ครั้ง-ก่อนเจอเธอ.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/afc7d9db0682a6b16a2a6003/afc7d9db0682a6b16a2a6003.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">11 Hearts Before You (2025) รัก 11 ครั้ง ก่อนเจอเธอ</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Baiyun-Ghost-House-2025-ไป๋อวิ๋นไจ-ร้านพิศวง.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/f2b80f9a2ff0a05aa2fbfa95/f2b80f9a2ff0a05aa2fbfa95.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Baiyun Ghost House (2025) ไป๋อวิ๋นไจ ร้านพิศวง</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/The-Fantastic-Four-First-Steps-2025-เดอะ-แฟนแทสติก-4-จุดเริ่มต้นปฐมบทใหม่.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/4f2068078ffe65ecc6564fc7/4f2068078ffe65ecc6564fc7.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Fantastic Four First Steps (2025) เดอะ แฟนแทสติก 4 จุดเริ่มต้นปฐมบทใหม่</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/04/The-Red-Envelope-2025-ซองแดงแต่งผี.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/1712e730229435c6afd8dcc8/1712e730229435c6afd8dcc8.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">The Red Envelope (2025) ซองแดงแต่งผี</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Lilo-Stitch-2025-ลิโล่-สติทช์.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/eb7c0731f9df805c7e91bf01/eb7c0731f9df805c7e91bf01.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Lilo &amp; Stitch (2025) ลิโล่ &amp; สติทช์</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Veil-Of-Chu-2025-สุสานเจ้าสาวเมืองฉู่.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/f99a70ee77a81fbb4d4536a6/f99a70ee77a81fbb4d4536a6.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Veil Of Chu (2025) สุสานเจ้าสาวเมืองฉู่</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/A-Normal-Woman-2025.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/74bbbf933f39fceb44bd35c4/74bbbf933f39fceb44bd35c4.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">A Normal Woman (2025)</div>
+</div>
+<div class="movie-item" data-category="new! 123-hdd">
+<div class="movie-box">
+<div class="movie-image">
+<button type="button"style="background-image:url(https://www.123-hdd.com/wp-content/uploads/2025/07/Karate-Kid-Legends-2025-คาราเต้-คิด-ผนึกพลังตำนานนักสู้.png);"onclick="window.location.href='https://main.24playerhd.com/newplaylist/4337d43deb32f9ae9bde5022/4337d43deb32f9ae9bde5022.m3u8'"autofocus="">
+</button>
+</div>
+</div>
+<div class="movie-title">Karate Kid Legends (2025) คาราเต้ คิด ผนึกพลังตำนานนักสู้</div>
+</div>
+
+
+		
+<!-- Pagination -->
+     <div class="pagination-wrapper">
+     <nav>
+     <ul class="pagination">
+     <li><a href="go:main-indy" aria-label=" "><span aria-hidden="true"><< กลับหน้าแรก</span></a></li>
+<li class="active"><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-1.html"><b>หน้าที่1</b></a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-2.html">หน้าที่2</a></li>               
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-3.html">หน้าที่3</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-4.html">หน้าที่5</a></li>				
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-5.html">หน้าที่5</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-6.html">หน้าที่6</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-7.html">หน้าที่7</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-8.html">หน้าที่8</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-9.html">หน้าที่9</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-10.html">หน้าที่10</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-11.html">หน้าต่อไป»</a></li>
+     <li><a href="https://udzaa2238.github.io/123hd/123hd-กย2568-15.html">หน้าสุดท้าย»</a></li>
+        
+			</ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
